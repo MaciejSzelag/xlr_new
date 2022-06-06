@@ -1,0 +1,195 @@
+header {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    opacity: 0;
+    animation: show-in 2s ease-in-out 1 both;
+
+    .header-wrap {
+        width: 100%;
+        height: 100%;
+
+        .header-top,
+        .header-bottom {
+            width: 100%;
+        }
+
+        .header-top {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+            // transform: translateY(5rem);
+            height: 65vh;
+            color: white;
+
+            .bg-name {
+                background-image: linear-gradient(45deg, black, $main_color 50%);
+                @include center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                animation: show-in 1s 1s ease-in-out 1 both;
+
+                .h1-bg-name {
+                    font-size: 50vw;
+                    font-family: 'Cormorant Garamond', serif;
+                    color: rgba(255, 255, 255, 0.15);
+
+                    // opacity: .1;
+                    color: rgba(0, 0, 0, 0.1);
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+
+            .h1-wrap,
+            .p-wrap {
+                transform: translateY(20vh);
+            }
+
+            .h1-wrap {
+
+                h1 {
+                    // font-family: 'Cormorant Garamond', serif;
+                    font-weight: 100;
+                    font-size: 18vw;
+
+                    // line-height: 12vh;
+                    text-align: center;
+                    font-weight: 100;
+                    opacity: 0;
+                    transform: translateY(3rem);
+                    animation: show-h1 .5s ease-in-out 1 both;
+
+                    strong {
+                        // color: rgba(153, 55, 55, 0.829);
+                        color: $color_1;
+                        // text-shadow: 0 0 .5rem whitesmoke;
+                        font-weight: 500;
+                    }
+                }
+
+                h1:nth-child(1) {
+                    animation-delay: 1s;
+                }
+
+                h1:nth-child(2) {
+                    animation-delay: 1.4s;
+                }
+
+                h1:nth-child(3) {
+                    animation-delay: 1.8s;
+                }
+            }
+
+            .p-wrap {
+
+                display: none;
+
+
+
+                p {
+                    // width: 100%;
+                    // padding: 1rem 5rem;
+                    font-size: 2rem;
+                    font-weight: 100;
+                    text-align: center;
+                    filter: drop-shadow(0 0 1rem rgb(0, 0, 0));
+                }
+            }
+
+
+
+        }
+
+        .header-bottom {
+            height: 70vh;
+            background-image: url(../images/Group.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            // background-attachment: fixed;
+
+            .bg-cov {
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.75);
+            }
+
+        }
+    }
+}
+
+@media(min-width:1025px) {
+    header {
+
+
+        .header-wrap {
+
+
+
+            .header-top {
+
+                justify-content: center;
+                align-items: flex-end;
+                flex-direction: row;
+
+                .p-wrap {
+                    display: block;
+                }
+
+                .h1-wrap,
+                .p-wrap {
+                    transform: translateY(20vh);
+                }
+
+                .h1-wrap {
+
+
+
+                    h1 {
+
+                        font-size: 19vh;
+
+                        // line-height: 16vh;
+
+
+
+                    }
+                }
+
+                .p-wrap {
+                    padding: 0 10vw;
+                    transform: translateY(-5vh);
+
+                    p {
+                        font-size: 4rem;
+                        font-weight: 300;
+                    }
+                }
+
+
+
+            }
+
+
+        }
+    }
+}
+
+@keyframes show-h1 {
+    from {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

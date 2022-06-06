@@ -1,0 +1,28 @@
+footer {
+    @include center;
+    width: 100%;
+    height: $footer_h;
+    background-color: black;
+    color: rgb(59, 59, 59);
+    font-size: 4.5vw;
+}
+
+@media (min-width:414px) {
+    footer {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media(min-width:700px) {
+    footer {
+        font-size: 2rem;
+    }
+
+}
+
+@media(min-width:1025px) {
+    footer {
+        font-size: 2rem
+    }
+}

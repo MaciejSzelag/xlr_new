@@ -1,0 +1,182 @@
+main {
+
+
+    // .scroll-snap {
+    //     overflow: scroll;
+    //     scroll-snap-type: y mandatory;
+    //     -webkit-overflow-scrolling: touch;
+    //     overflow-x: hidden;
+    // }
+
+    .gallery-section {
+        width: 100%;
+        height: auto;
+
+
+        .img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        .img-container {
+            // position: fixed;
+            // scroll-snap-align: start;
+            z-index: 10;
+            width: 100%;
+            height: auto;
+            // background-image: url(../images/BG-logo-gallery-mob.png);
+            // background-position: center;
+            // background-size: cover;
+            // background-repeat: no-repeat;
+            // background-attachment: fixed;
+
+            .h1-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                // background-color: rgba(0, 0, 0, 0.3);
+
+                h1 {
+                    color: $color_1;
+                    font-size: 8vw;
+                    text-align: center;
+                }
+            }
+
+            .img-box {
+                // @include center;
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                // background-image: url(../images/img-1.jpg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                overflow: hidden;
+
+
+                .blur-bg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    // background-color: rgba(0, 0, 0, 0.87);
+                    z-index: 1;
+
+                    backdrop-filter: blur(20px);
+
+
+                }
+
+                img {
+                    // display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 90%;
+                    z-index: 2;
+                    box-shadow: 0 0 3rem .2rem black;
+                    border-radius: 1rem;
+                }
+
+            }
+
+            .img-1 {
+                background-image: url(../images/gallery/img-2.jpg);
+            }
+
+            .img-2 {
+                background-image: url(../images/gallery/img-3.jpg);
+            }
+
+            .img-3 {
+                background-image: url(../images/gallery/img-4.jpg);
+            }
+
+            .img-4 {
+                background-image: url(../images/gallery/img-5.jpg);
+            }
+
+            .img-5 {
+                background-image: url(../images/gallery/xlr-logo.jpg);
+                background-position: center;
+            }
+
+            .img-6 {
+                background-image: url(../images/gallery/img-7.jpg);
+            }
+
+            .img-7 {
+                background-image: url(../images/gallery/img-8.jpg);
+            }
+
+            .img-8 {
+                background-image: url(../images/gallery/img-1.jpg);
+            }
+
+            .img-9 {
+                background-image: url(../images/gallery/img-6.jpg);
+            }
+        }
+    }
+}
+
+@media (min-width:1025px) {
+    main {
+        .scroll-snap::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-snap {
+            overflow: scroll;
+            scroll-snap-type: y mandatory;
+            -webkit-overflow-scrolling: touch;
+            overflow-x: hidden;
+        }
+
+        .gallery-section {
+            width: 100%;
+            height: calc(100vh - #{$footer_h});
+            // height: 100vh;
+
+
+            // .img-container {
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            // }
+
+
+
+            .img-container {
+                // position: fixed;
+                scroll-snap-align: start;
+                height: 100vh;
+
+
+                .img-box {
+
+                    background-attachment: fixed;
+                    transition: .5s ease-in-out;
+                    flex-grow: 1;
+
+                    img {
+                        width: 50%;
+                    }
+                }
+
+
+
+            }
+
+        }
+    }
+
+}

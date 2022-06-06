@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+
+    body {
+        background-color: $main_color;
+        font-family: 'Lato', sans-serif;
+
+        main {
+            width: 100%;
+            height: auto;
+            @include center;
+            flex-direction: column;
+        
+        }
+
+    }
+}
+
+@media (max-width:900px) and (orientation:landscape) {
+    .landscape {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: $main_color;
+        z-index: 9999
+    }
+
+    .landscape::after {
+        @include center;
+        content: "Please, turn your device over.";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: wheat;
+        font-size: 3vw;
+    }
+}
